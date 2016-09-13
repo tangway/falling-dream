@@ -3,7 +3,7 @@
   position: relative;
   width: 420px;
   height: 600px;
-  background: url('../img/sky.jpg') repeat-y;
+  background: url('../img/sky-light.jpg') repeat-y;
   /*-webkit-animation: backgroundScroll 60s linear infinite;*/
   animation: backgroundScroll 1.5s linear infinite;
   text-align: center;
@@ -23,13 +23,17 @@ to {background-position: 0 -1249px;}
 #figure {
   position: absolute;
   z-index: 5;
-  top: 12px;
-  left: 190px;
+  top: 32px;
+  left: 158px;
   right: 190px;
-  height: 44px;
-  width: 70px;
+  height: 200px;
+  width: 150px;
   /*border: 1px solid black;*/
-  background-color: black;
+  /*background-color: black;*/
+  background: url('../img/cockatrice.gif');
+  background-repeat: no-repeat;
+  background-size: 120px 88px;
+  /*transform: rotate(180deg);*/
 }
 
 /*.first, .second, .third, .fourth, .fifth {
@@ -56,24 +60,35 @@ to {background-position: 0 -1249px;}
 
 .obstacle1 {
   position: absolute;
-  z-index: 5;
+  z-index: 3;
   bottom: 0px;
-  left: 10px;
+  left: 50px;
   right: 190px;
   height: 34px;
-  width: 160px;
-  /*border: 1px solid black;*/
-  background-color: red;
+  width: 90px;
+  background-color: #DAF7E0;
 }
 
 .obstacle2 {
   position: absolute;
-  z-index: 5;
+  z-index: 3;
   bottom: 0px;
-  left: 240px;
+  left: 170px;
   right: 10px;
   height: 34px;
-  width: 160px;
+  width: 90px;
   /*border: 1px solid black;*/
-  background-color: green;
+  background-color: #F7F6BA;
+}
+
+.obstacle3 {
+  position: absolute;
+  z-index: 3;
+  bottom: 0px;
+  left: 300px;
+  right: 10px;
+  height: 34px;
+  width: 90px;
+  /*border: 1px solid black;*/
+  background-color: #F7F6BA;
 }

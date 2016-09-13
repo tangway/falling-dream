@@ -1,1 +1,1 @@
-$('#obj').animate({top: '+=450px'}, 5000);
+// $('#obj').animate({top: '+=450px'}, 5000);
