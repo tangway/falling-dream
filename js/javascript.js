@@ -25,6 +25,13 @@ var obstacle2 = {
   h: 34,
 }
 
+var obstacle3 = {
+  name: 'obstacle 3',
+  x: 246,
+  y: 609,
+  w: 84,
+  h: 34,
+}
 
 $(document).click(function() {
   console.log('mouse x: ' + event.screenX);
@@ -64,12 +71,12 @@ function move(e) {
 
 function trackThings() {
   // console.log('x: ' + hero.x + '. y: ' + hero.y)
-  var ob1 = $(".obstacle1").position();
+  var ob1 = $("#obstacle1").position();
   obstacle1 = {x1:ob1.left, y1:ob1.top}
-  var ob2 = $(".obstacle2").position();
+  var ob2 = $("#obstacle2").position();
   obstacle2 = {x1:ob2.left, y1:ob2.top}
-  var ob3 = $(".obstacle3").position();
-  var obstacle3 = {x1:ob3.left, y1:ob3.top}
+  var ob3 = $("#obstacle3").position();
+  obstacle3 = {x1:ob3.left, y1:ob3.top}
   // console.log('x1: ' + obstacle1.x1 + ' y1: ' + obstacle1.y1);
   var heroo = $("#figure").position();
   hero = {x1:heroo.left, y1:heroo.top};
@@ -84,12 +91,18 @@ function simpleCollisionDetection() {
   if (hero.x1 === obstacle1.x1 && hero.y1 > obstacle1.y1) {
     score -= 1
     console.log('score: ' + score);
+  } else if (hero.x1 === obstacle2.x1 && hero.y1 > obstacle2.y1) {
+    score -= 1
+    console.log('score: ' + score);
+  } else if (hero.x1 === obstacle3.x1 && hero.y1 > obstacle3.y1) {
+    score -= 1
+    console.log('score: ' + score);
   }
 }
 
-
+//
 setInterval(trackThings, 100)
-setInterval(simpleCollisionDetection, 100)
+setInterval(simpleCollisionDetection, 200)
 
 // var colliders_selector = "#figure";
 // var obstacles_selector = ".obstacle1";
@@ -97,37 +110,44 @@ setInterval(simpleCollisionDetection, 100)
 // console.log(hits);
 
 
-// function generator() {
-//   // check if .obstacle1 & 2 or 2 & 3 or 1& 3 is around
-//   // if so, dont generate
-//   // if not, generate 1
-//   // if 0 found, generate 2
-//   if  ($('div.').length >
+function checkGenerator() {
+  // check if .obstacle1 & 2 or 2 & 3 or 1& 3 is around
+  // if so, dont generate
+  // if not, generate 1
+  // if 0 found, generate 2
+  if  ($('.obstacle')[0]) {
+    // console.log("alive!");
+  }
+}
 
 
+setInterval(checkGenerator, 100)
 
 setInterval(function() {generateObstacle1()}, 6000);
 function generateObstacle1 () {
-  $('.obstacle1').remove()
-  $('#cloud-scroll').append('<div class="obstacle1"></div>')
-  $('.obstacle1').animate({bottom: "+=600"}, Math.random()*10000)
+  $('#obstacle1').remove()
+  $('#cloud-scroll').append('<div class="obstacle" id="obstacle1"></div>')
+  $('#obstacle1').animate({bottom: "+=600"}, Math.random()*10000)
 
 }
 
 
-setInterval(function() {generateObstacle2()}, 4000);
+setInterval(function() {generateObstacle2()}, 8000);
 function generateObstacle2 () {
-  $('#cloud-scroll').append('<div class="obstacle2"></div>')
-  $('.obstacle2').animate({bottom: "+=600"}, Math.random()*10000)
+  $('#obstacle2').remove()
+  $('#cloud-scroll').append('<div class="obstacle" id="obstacle2"></div>')
+  $('#obstacle2').animate({bottom: "+=600"}, Math.random()*10000)
 
 }
 
-setInterval(function() {generateObstacle3()}, 4000);
+setInterval(function() {generateObstacle3()}, 9000);
 function generateObstacle3 () {
-  $('#cloud-scroll').append('<div class="obstacle3"></div>')
-  $('.obstacle3').animate({bottom: "+=600"}, Math.random()*10000)
+  $('#obstacle3').remove()
+  $('#cloud-scroll').append('<div class="obstacle" id="obstacle3"></div>')
+  $('#obstacle3').animate({bottom: "+=600"}, Math.random()*10000)
 
 }
+
 
 
 // setInterval(function() {

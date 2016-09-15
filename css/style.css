@@ -59,7 +59,7 @@ to {background-position: 0 -1249px;}
   width: 50px;
 }
 
-.obstacle1 {
+#obstacle1 {
   position: absolute;
   z-index: 3;
   bottom: 0px;
@@ -70,7 +70,7 @@ to {background-position: 0 -1249px;}
   background-color: #DAF7E0;
 }
 
-.obstacle2 {
+#obstacle2 {
   position: absolute;
   z-index: 3;
   bottom: 0px;
@@ -82,7 +82,7 @@ to {background-position: 0 -1249px;}
   background-color: #F7F6BA;
 }
 
-.obstacle3 {
+#obstacle3 {
   position: absolute;
   z-index: 3;
   bottom: 0px;
@@ -91,5 +91,5 @@ to {background-position: 0 -1249px;}
   height: 34px;
   width: 90px;
   /*border: 1px solid black;*/
-  background-color: #F7F6BA;
+  background-color: #F7F6AA;
 }
